@@ -26,7 +26,12 @@ public abstract class Unit : MonoBehaviour,
 
     private void Start()
     {
-
+        //If the main manager instance exists
+        if (MainManager.instance != null)
+        {
+            //Set the color of the unit using the team color of the main manager
+            SetColor(MainManager.instance.teamColor);
+        }
     }
 
     void SetColor(Color c)
